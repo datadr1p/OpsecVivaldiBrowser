@@ -89,6 +89,9 @@ Dans un nouveau cmd, tapez :
 
 
 
+
+
+
 <details>
 <summary>📡 6. Récupérer de nouveaux bridges obfs4</summary>
 
@@ -107,7 +110,8 @@ Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=.
 
 </details>
 
+
 <details>
 <summary>💡 Paramètre Vivaldi</summary>
-https://github.com/user-attachments/assets/0650a05f-29e8-4494-aa47-ffbe2864b0ca
+https://github.com/user-attachments/assets/79c69fa0-e59c-4bfa-b81c-32ad6eb3d6e7
 </details>
