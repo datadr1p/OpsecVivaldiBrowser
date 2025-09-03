@@ -1,43 +1,42 @@
-# Tor Expert Bundle + Vivaldi via obfs4 Bridges sur Windows
+# Tor Expert Bundle + Vivaldi via obfs4 Bridges on Windows
 
 <img width="1400" height="500" alt="image" src="https://github.com/user-attachments/assets/aa6daaa9-d2dc-41d4-9516-7257305e0055" />
 
-*Ce guide explique comment configurer Tor Expert Bundle avec des ponts **obfs4** combiné à Vivaldi Browser via SOCKS5. Ce guide inclut la récupération des bridges, la compilation d'obfs4proxy, et la configuration complète du naviguateur.*
+*This guide explains how to configure Tor Expert Bundle with **obfs4** bridges combined with Vivaldi Browser via SOCKS5. It includes fetching bridges, compiling obfs4proxy, and full browser configuration.*
 
 <details>
-<summary>📥 1. Télécharger Tor Expert Bundle</summary>
+<summary>📥 1. Download Tor Expert Bundle</summary>
 
-1. *Rendez-vous sur le site officiel :* [Tor Project - Expert Bundle](https://www.torproject.org/download/tor/).
-2. *Téléchargez* **Windows Expert Bundle** (pas le Tor Browser).
-3. *Extrayez l’archive, par exemple dans* :
+1. *Go to the official website:* [Tor Project - Expert Bundle](https://www.torproject.org/download/tor/).  
+2. *Download* **Windows Expert Bundle** (not Tor Browser).  
+3. *Extract the archive, for example into:*  
 
 ```
-C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
+C:\Users\<YourName>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
 ```
 </details>
 
 <details>
-<summary>🛠 2. Compiler obfs4proxy.exe</summary>
+<summary>🛠 2. Compile obfs4proxy.exe</summary>
 
-1. *Le binaire `obfs4proxy.exe` n’est pas inclus dans l’Expert Bundle*.
-2. *Récupérez le code source depuis GitHub* : [Yawning/obfs4](https://github.com/Yawning/obfs4?utm_source=chatgpt.com)
-3. *Installez **Go** pour Windows* : [https://golang.org/dl/](https://golang.org/dl/)
-4. *Ouvrez `cmd.exe` dans le dossier du projet et compilez* :
+1. *The binary `obfs4proxy.exe` is not included in the Expert Bundle.*  
+2. *Fetch the source code from GitHub:* [Yawning/obfs4](https://github.com/Yawning/obfs4?utm_source=chatgpt.com)  
+3. *Install **Go** for Windows:* [https://golang.org/dl/](https://golang.org/dl/)  
+4. *Open `cmd.exe` in the project folder and compile:*  
 
 ```cmd
 go build -o obfs4proxy.exe ./obfs4proxy
 ```
 
-5. *Placez le fichier compilé dans le dossier Tor Expert Bundle, par exemple* :
+5. *Place the compiled file into the Tor Expert Bundle folder, for example:*  
 
 ```
-C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
+C:\Users\<YourName>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
 ```
-
 </details>
 
 <details>
-<summary>⭐ 2Bonus. Tout Téléchargé</summary>
+<summary>⭐ 2Bonus. Download Everything</summary>
 
 ```powershell
 $DownloadPath = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
@@ -79,103 +78,92 @@ if (-not (Test-Path $GoInstaller)) {
 
 Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$GoInstaller`" /qn" -Verb RunAs -Wait
 ```
-
 </details>
 
 <details>
-<summary>🌉 3. Configurer torrc avec des ponts obfs4</summary>
+<summary>🌉 3. Configure torrc with obfs4 bridges</summary>
 
-*Créez ou éditez le fichier `torrc` dans* :
+*Create or edit the `torrc` file in:*  
 
 ```
-C:\Users\<VotreNom>\AppData\Roaming\tor\torrc
+C:\Users\<YourName>\AppData\Roaming\tor\torrc
 ```
 
-*Exemple minimal* :
+*Minimal example:*  
 
 ```txt
 SocksPort 9050
 UseBridges 1
-ClientTransportPlugin obfs4 exec C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor\obfs4proxy.exe
+ClientTransportPlugin obfs4 exec C:\Users\<YourName>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor\obfs4proxy.exe
 
 Bridge obfs4 83.136.106.151:899 9227826C1117020553E6F7ACBBC2CE7EE5FF5595 cert=aM6Vcv8Wx9/gBRlaqz1UQbuOP6EC96VtI/Ll0CJydbJu+mz75ESFl+a8DddZpUXjdDwBRQ iat-mode=0
 Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=KM/Ss74USK7NzzQE40uZEmeSV17dmr8ukI2vsE071gT2qWNPVyLZnzg9rIQcO09FCyvOYA iat-mode=0
 ```
 
-> ⚠️ *Remplacez les bridges par ceux que vous récupérez depuis Tor Browser > Settings > Tor > “Configure a New Bridge” ou depuis* [https://bridges.torproject.org/](https://bridges.torproject.org/).
+> ⚠️ *Replace the bridges with the ones you fetch from Tor Browser > Settings > Tor > “Configure a New Bridge” or from* [https://bridges.torproject.org/](https://bridges.torproject.org/).
 
 </details>
 
 <details>
-<summary>🚀 4. Lancer Tor Expert Bundle</summary>
+<summary>🚀 4. Start Tor Expert Bundle</summary>
 
-*Ouvrez `cmd.exe` et tapez* :
+*Open `cmd.exe` and type:*  
 
 ```cmd
-"C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor\tor.exe" -f "C:\Users\<VotreNom>\AppData\Roaming\tor\torrc"
+"C:\Users\<YourName>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor\tor.exe" -f "C:\Users\<YourName>\AppData\Roaming\tor\torrc"
 ```
 
-* *Attendez que le log affiche* **Bootstrapped 100%**.
+* *Wait until the log shows* **Bootstrapped 100%**.
 
 </details>
 
 <details>
-<summary>🌐 5. Lancer Vivaldi via SOCKS5</summary>
+<summary>🌐 5. Start Vivaldi via SOCKS5</summary>
 
-*Dans un nouveau cmd, tapez* :
+*In a new cmd, type:*  
 
 ```cmd
-"C:\Users\<VotreNom>\AppData\Local\Vivaldi\Application\vivaldi.exe" --proxy-server="socks5://127.0.0.1:9050" --proxy-bypass-list="<-loopback>"
+"C:\Users\<YourName>\AppData\Local\Vivaldi\Application\vivaldi.exe" --proxy-server="socks5://127.0.0.1:9050" --proxy-bypass-list="<-loopback>"
 ```
 
-* *Vérifiez votre anonymat sur* [https://check.torproject.org](https://check.torproject.org).
+* *Check your anonymity on* [https://check.torproject.org](https://check.torproject.org).
 
 </details>
 
-
-
-
-
-
 <details>
-<summary>📡 6. Récupérer de nouveaux bridges obfs4</summary>
+<summary>📡 6. Fetch new obfs4 bridges</summary>
 
-1. *Installez Tor Browser pour obtenir des bridges* :
+1. *Install Tor Browser to get bridges:*  
+   * *Open* **Tor Browser > Settings > Tor > Configure a New Bridge**  
+   * *Choose* **obfs4** and copy the Bridge lines.  
 
-   * *Ouvrez* **Tor Browser > Settings > Tor > Configure a New Bridge**
-   * *Choisissez* **obfs4** et copiez les lignes Bridge.
+2. *Replace them in your `torrc` with the new bridges.*  
 
-2. *Remplacez-les dans votre `torrc` avec les ponts “faux” ou de test.*
-
-*Exemple à copier-coller* :
+*Example:*  
 
 ```txt
 Bridge obfs4 83.136.106.151:899 9227826C1117020553E6F7ACBBC2CE7EE5FF5595 cert=... iat-mode=0
 Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=... iat-mode=0
 ```
+</details>
+
+<details>
+<summary>💡 Vivaldi Browser Settings</summary>
+
+[🎥 Video](https://github.com/user-attachments/assets/79c69fa0-e59c-4bfa-b81c-32ad6eb3d6e7)
 
 </details>
 
-
 <details>
-<summary>💡 Paramètres Vivaldi Browser</summary>
+<summary>🏬 Vivaldi Browser Extensions</summary>
 
-[🎥 Vidéo](https://github.com/user-attachments/assets/79c69fa0-e59c-4bfa-b81c-32ad6eb3d6e7)
+1. [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh?hl=en)  
+   *Blocks ads, trackers, malicious scripts.*  
 
-</details>
-
-
-
-<details>
-<summary>🏬 Extensions Vivaldi Browser</summary>
-
-1. [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh?hl=fr)  
-   *Bloque les publicités, trackers, scripts malveillants.*
-
-2. [Privacy Badger](https://chromewebstore.google.com/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=fr)  
-   *bloquer les trackers*  
+2. [Privacy Badger](https://chromewebstore.google.com/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en)  
+   *Blocks trackers automatically.*  
 
 3. [Decentraleyes](https://chromewebstore.google.com/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj/support)  
-   *Évite les connexions vers des serveurs externes* 
+   *Avoids connections to external CDN servers by serving local resources.*  
 
 </details>
