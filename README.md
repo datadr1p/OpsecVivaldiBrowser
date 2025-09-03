@@ -1,4 +1,4 @@
-# Tor Expert Bundle + Vivaldi via obfs4 Bridges on Windows
+# Tor Expert Bundle + Vivaldi + obfs4 Bridges on Windows
 
 <img width="1400" height="500" alt="image" src="https://github.com/user-attachments/assets/aa6daaa9-d2dc-41d4-9516-7257305e0055" />
 
