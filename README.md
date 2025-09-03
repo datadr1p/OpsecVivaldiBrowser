@@ -191,14 +191,16 @@ git clone https://github.com/datadr1p/OpsecVivaldiBrowser
 ```cmd
 git clone https://github.com/datadr1p/OpsecVivaldiBrowser
 ```
+1.2 *Open the folder and open the cmd in the folder and install nuitka.*
 ```cmd
 pip install nuitka
 ```
+1.3 *Compile the .py into .exe*
 ```cmd
 python -m nuitka --onefile --windows-icon-from-ico=vivaldi.ico VivaldiBrowserLauncher.py
 ```
 2. *Run VivaldiBrowserLauncher.exe*
 3. *Put the .exe you compiled in in the start menu*
 ```cmd
-
+%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\
 ```
