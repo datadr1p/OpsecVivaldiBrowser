@@ -1,6 +1,9 @@
 # Tor Expert Bundle + Vivaldi via obfs4 Bridges sur Windows
 
-Ce guide explique comment configurer Tor Expert Bundle avec des ponts **obfs4** sur Windows et utiliser Vivaldi via SOCKS5 pour naviguer anonymement. Ce guide inclut la récupération des bridges, la compilation d'obfs4proxy, et la configuration complète.
+
+<img width="1024" height="1024" alt="opsecvivaldibrowser" src="https://github.com/user-attachments/assets/2c576360-b2b0-468f-a9d0-a3e8e8ca3f21" />
+
+Ce guide explique comment configurer Tor Expert Bundle avec des ponts **obfs4** + Vivaldi via SOCKS5. Ce guide inclut la récupération des bridges, la compilation d'obfs4proxy, et la configuration complète du naviguateur.
 
 <details>
 <summary>📥 1. Télécharger Tor Expert Bundle</summary>
@@ -24,7 +27,6 @@ C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
 4. Ouvrez `cmd.exe` dans le dossier du projet et compilez :
 
 ```cmd
-cd C:\Users\<VotreNom>\Downloads\obfs4
 go build -o obfs4proxy.exe ./obfs4proxy
 ```
 
@@ -70,7 +72,6 @@ Ouvrez `cmd.exe` et tapez :
 ```
 
 * Attendez que le log affiche **Bootstrapped 100%**.
-* Tor écoute alors sur `127.0.0.1:9050`.
 
 </details>
 
@@ -106,10 +107,6 @@ Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=.
 </details>
 
 <details>
-<summary>💡 Notes OPSEC / Limitations</summary>
-
-* Le User-Agent spoofing **ne change que l’User-Agent**. Il ne protège pas contre le fingerprinting complet.
-* L’utilisation de Vivaldi via Tor **ne garantit pas l’anonymat complet** comme Tor Browser.
-* Les ponts obfs4 permettent d’éviter la détection des nœuds publics Tor, mais certains sites peuvent toujours reconnaître le trafic Tor.
+<summary>💡 Paramètre Vivaldi</summary>
 
 </details>
