@@ -1,4 +1,10 @@
-<img width="1024" height="1024" alt="opsecvivaldibrowser" src="https://github.com/user-attachments/assets/980740cc-bea1-4007-a974-2a46a80b9f15" /> # Tor Expert Bundle + Vivaldi via obfs4 Bridges sur Windows
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/980740cc-bea1-4007-a974-2a46a80b9f15" 
+       alt="opsecvivaldibrowser" 
+       width="80" 
+       style="vertical-align:middle; margin-right:10px;" />
+  <b>Tor Expert Bundle + Vivaldi via obfs4 Bridges sur Windows</b>
+</p>
 
 
 <img width="200" height="500" alt="image" src="https://github.com/user-attachments/assets/aa6daaa9-d2dc-41d4-9516-7257305e0055" />
