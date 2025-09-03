@@ -165,8 +165,14 @@ https://github.com/user-attachments/assets/79c69fa0-e59c-4bfa-b81c-32ad6eb3d6e7
 
 <details>
 <summary>🏬 Extensions Vivaldi Browser</summary>
-1. [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh?hl=fr)
-2. [Privacy Badger](https://chromewebstore.google.com/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=fr)
-3. [Decentraleyes](https://chromewebstore.google.com/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj/support)
-</details>
 
+1. [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh?hl=fr)  
+   *Bloque les publicités, trackers, scripts malveillants.*
+
+2. [Privacy Badger](https://chromewebstore.google.com/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=fr)  
+   *bloquer les trackers*  
+
+3. [Decentraleyes](https://chromewebstore.google.com/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj/support)  
+   *Évite les connexions vers des serveurs externes* 
+
+</details>
