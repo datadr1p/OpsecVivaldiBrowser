@@ -191,11 +191,14 @@ git clone https://github.com/datadr1p/OpsecVivaldiBrowser
 ```cmd
 git clone https://github.com/datadr1p/OpsecVivaldiBrowser
 ```
-2. *Run VivaldiBrowserLauncher.exe*
-3. *If you don’t trust it, it’s just a simple Python script — you can decompile it using pyinstxtractor.*
 ```cmd
-pip install pyinstxtractor
+pip install nuitka
 ```
 ```cmd
-python pyinstxtractor.py VivaldiBrowserLauncher.exe
+python -m nuitka --onefile --windows-icon-from-ico=vivaldi.ico VivaldiBrowserLauncher.py
+```
+2. *Run VivaldiBrowserLauncher.exe*
+3. *Put the .exe you compiled in in the start menu*
+```cmd
+
 ```
