@@ -2,7 +2,7 @@
 
 <img width="1400" height="500" alt="image" src="https://github.com/user-attachments/assets/aa6daaa9-d2dc-41d4-9516-7257305e0055" />
 
-*Ce guide explique comment configurer Tor Expert Bundle avec des ponts **obfs4** combiné à Vivaldi Browser via SOCKS5. Ce guide inclut la récupération des bridges, la compilation d'obfs4proxy, et la configuration complète du naviguateur.*<br>
+*Ce guide explique comment configurer Tor Expert Bundle avec des ponts **obfs4** combiné à Vivaldi Browser via SOCKS5. Ce guide inclut la récupération des bridges, la compilation d'obfs4proxy, et la configuration complète du naviguateur.*
 
 
 <details>
@@ -160,5 +160,6 @@ Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=.
 <details>
 <summary>💡 Paramètre Vivaldi</summary>
 https://github.com/user-attachments/assets/79c69fa0-e59c-4bfa-b81c-32ad6eb3d6e7
+<br>    
 > ⚠️ *Pour les cookies tu peux choisir l'option tout bloquer.*
 </details>
