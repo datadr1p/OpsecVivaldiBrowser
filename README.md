@@ -167,3 +167,14 @@ Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=.
    *Avoids connections to external CDN servers by serving local resources.*  
 
 </details>
+
+<details>
+<summary>🚀 Launcher Vivaldi Browser</summary>
+
+1.
+
+2.
+
+3.
+
+</details>
