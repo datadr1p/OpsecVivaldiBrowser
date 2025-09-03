@@ -171,10 +171,31 @@ Bridge obfs4 70.104.192.207:9003 31F79D4C6E831FBDAB5ACAB9DB02B40A6A24E93E cert=.
 <details>
 <summary>🚀 Launcher Vivaldi Browser</summary>
 
-1.
+1. *Clone mon github:*
+```cmd
+git clone https://github.com/datadr1p/OpsecVivaldiBrowser
+```
 
-2.
+2. *Execute VivaldiBrowserLauncher.exe*
 
-3.
+3. *Si tu n'as pas confiance, c'est un simple script python, tu peux le decompilé via pyinstaller*
+```cmd
+
+```
 
 </details>
+<details> 
+<summary>🚀 Vivaldi Browser Launcher</summary>
+
+1. *Clone my GitHub:*
+```cmd
+git clone https://github.com/datadr1p/OpsecVivaldiBrowser
+```
+2. *Run VivaldiBrowserLauncher.exe*
+3. *If you don’t trust it, it’s just a simple Python script — you can decompile it using pyinstxtractor.*
+```cmd
+pip install pyinstxtractor
+```
+```cmd
+python pyinstxtractor.py VivaldiBrowserLauncher.exe
+```
