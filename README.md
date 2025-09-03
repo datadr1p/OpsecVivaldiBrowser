@@ -14,7 +14,48 @@
 ```
 C:\Users\<VotreNom>\Downloads\tor-expert-bundle-windows-i686-14.5.6\tor
 ```
+4. Pour tout télécharger :
 
+```powershell
+$DownloadPath = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
+
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    $GitUrl = "https://github.com/git-for-windows/git/releases/latest/download/Git-2.47.0-64-bit.exe"
+    $GitInstaller = Join-Path $DownloadPath "git-installer.exe"
+    Invoke-WebRequest -Uri $GitUrl -OutFile $GitInstaller
+    Start-Process -FilePath $GitInstaller -ArgumentList "/VERYSILENT" -Verb RunAs -Wait
+}
+
+$TorUrl = "https://archive.torproject.org/tor-package-archive/torbrowser/14.5.6/tor-expert-bundle-windows-i686-14.5.6.tar.gz"
+$TorFile = Join-Path $DownloadPath "tor-expert-bundle-windows-i686-14.5.6.tar.gz"
+
+if (-not (Test-Path $TorFile)) {
+    Invoke-WebRequest -Uri $TorUrl -OutFile $TorFile
+}
+
+try {
+    $TorExtractPath = Join-Path $DownloadPath "tor-expert-bundle"
+    if (Test-Path $TorExtractPath) { Remove-Item -Recurse -Force $TorExtractPath }
+    mkdir $TorExtractPath | Out-Null
+    tar -xzf $TorFile -C $TorExtractPath
+} catch {}
+
+Set-Location $DownloadPath
+$Obfs4Path = Join-Path $DownloadPath "obfs4"
+if (Test-Path $Obfs4Path) {
+    Remove-Item -Recurse -Force $Obfs4Path
+}
+git clone "https://github.com/Yawning/obfs4.git"
+
+$GoUrl = "https://go.dev/dl/go1.25.0.windows-amd64.msi"
+$GoInstaller = Join-Path $DownloadPath "go1.25.0.windows-amd64.msi"
+
+if (-not (Test-Path $GoInstaller)) {
+    Invoke-WebRequest -Uri $GoUrl -OutFile $GoInstaller
+}
+
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$GoInstaller`" /qn" -Verb RunAs -Wait
+```
 </details>
 
 <details>
